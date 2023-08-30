@@ -8,7 +8,7 @@
 <h2>Log In</h2>
 <form method="post">{% csrf_token %}
     {{form | crispy}}
-    <button type="submit" class="btn btn-success ml-2">Log In</button>
+    <button type="submit" class="btn btn-outline-success">Log In</button>
 </form>
-<p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+<p><a href="{% url 'password_reset' %}" class="navbar-brand">Forgot your password?</a></p>
 {% endblock content %}
