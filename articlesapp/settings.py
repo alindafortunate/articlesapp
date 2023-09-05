@@ -88,10 +88,12 @@ WSGI_APPLICATION = "articlesapp.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if not DEBUG:
-    DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
-else:
-    DATABASES = {
+"""if not DEBUG:"""
+
+DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+
+"""else:"""
+""" DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
             "NAME": os.environ.get("DATABASE_NAME"),
@@ -100,7 +102,7 @@ else:
             "HOST": os.environ.get("DATABASE_HOST"),
             "PORT": os.environ.get("DATABASE_PORT"),
         }
-    }
+    }"""
 
 
 # Password validation
