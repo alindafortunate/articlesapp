@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG")
+DEBUG = os.environ.get("DEBUG", False) == "True"
 
 ALLOWED_HOSTS = ["*"]
 
@@ -89,6 +89,7 @@ WSGI_APPLICATION = "articlesapp.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 """if not DEBUG:"""
+# I was trying to deploy on render using postgress as my production database.
 
 DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
